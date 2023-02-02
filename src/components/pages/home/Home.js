@@ -11,7 +11,7 @@ import './home.css';
 export default function Home() {
     return (
         <>
-            <Navbar />
+            <Navbar type="logOut" />
             <Header />
             <div className="homeContainer">
                 <Featured />

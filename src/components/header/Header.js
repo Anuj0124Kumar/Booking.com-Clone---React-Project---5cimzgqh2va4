@@ -35,6 +35,7 @@ export default function Header({ type }) {
     });
 
     const navigate = useNavigate();
+    const register = useNavigate();
 
     const handleOption = (name, operation) => {
         setOptions((prev) => {
@@ -48,6 +49,10 @@ export default function Header({ type }) {
     const handleSearch = () => {
         navigate("/hotels", { state: { destination, date, options } });
     };
+
+    const handeRegisSign = () =>{
+        register("/register");
+    }
 
     return (
         <div className="header">
@@ -76,7 +81,7 @@ export default function Header({ type }) {
                             Get rewarded for your travels – unlock instant savings of 10% or
                             more with a free Lamabooking account
                         </p>
-                        <button className="headerBtn">Sign in / Register</button>
+                        <button className="headerBtn" onClick={handeRegisSign}>Sign in / Register</button>
                         <div className="headerSearch">
                             <div className="headerSearchItem">
                                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
@@ -182,7 +187,7 @@ export default function Header({ type }) {
                                 )}
                             </div>
                             <div className="headerSearchItem">
-                                <button className="headerBtn" onClick={handleSearch}>
+                                <button className="head" onClick={handleSearch}>
                                     Search
                                 </button>
                             </div>

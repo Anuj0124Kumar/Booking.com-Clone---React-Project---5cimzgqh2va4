@@ -45,6 +45,13 @@
     border: none;
     padding: 10px;
     cursor: pointer;
+    border-radius: 5px;
+  }
+  .head{
+    background-color: #0071c2;
+    border: none;
+    color: white;
+    border-radius: 2px;
   }
   
   .headerSearch {

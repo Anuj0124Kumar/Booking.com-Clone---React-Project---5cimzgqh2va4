@@ -58,7 +58,7 @@ export default function Hotel() {
   
     return (
         <div>
-            <Navbar />
+            <Navbar type="logOut" />
             <Header type="list" />
             <div className="hotelContainer">
                 {open && (
@@ -139,7 +139,10 @@ export default function Hotel() {
                     </div>
                 </div>
                 <MailList />
+                <div className="mt-4">
                 <Footer />
+                </div>
+                
             </div>
         </div>
     )

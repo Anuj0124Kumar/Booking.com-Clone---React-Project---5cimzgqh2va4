@@ -1,16 +1,44 @@
 import React from 'react'
 import "./navbar.css";
+import { useNavigate } from 'react-router-dom';
 
-export default function Navbar() {
-  return (
-    <div className="navbar">
-    <div className="navContainer">
-      <span className="logo">Welcome to BOOKING.COM</span>
-      <div className="navItems">
-        <button className="navButton">Register</button>
-        <button className="navButton">Login</button>
-      </div>
-    </div>
-  </div>
-  )
+export default function Navbar({ type }) {
+
+    const regis = useNavigate();
+    const Lgot = useNavigate();
+    const lgIn = useNavigate();
+
+
+    const handelRegis = () => {
+        regis("/register");
+    }
+
+    const handelLogIn = () => {
+        lgIn("/Login");
+    }
+
+    const handelLogout = () => {
+        Lgot("/register");
+    }
+
+    return (
+        <div className="navbar">
+            <div className="navContainer">
+                <span className="logo">Welcome to BOOKING.COM</span>
+                <div className="navItems">
+                    {type !== "logOut" ? <>
+                        <button className="navButton" onClick={handelRegis}>Register</button>
+                        <button className="navButton" onClick={handelLogIn}>Login</button>
+                    </>
+                        :
+                        <>
+                            <button className="navButton" onClick={handelRegis}>Register</button>
+                            <button className="navButton" onClick={handelLogout}>Logout</button>
+                            <button className="navButton" >Checkout</button>
+                        </>
+                    }
+                </div>
+            </div>
+        </div>
+    )
 }
