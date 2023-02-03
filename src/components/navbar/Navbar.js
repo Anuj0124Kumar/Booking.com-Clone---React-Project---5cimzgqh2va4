@@ -7,6 +7,11 @@ export default function Navbar({ type }) {
     const regis = useNavigate();
     const Lgot = useNavigate();
     const lgIn = useNavigate();
+    const checkOt = useNavigate();
+
+    const handelCheckOut = () =>{
+        checkOt("/checkout");
+    }
 
 
     const handelRegis = () => {
@@ -26,7 +31,7 @@ export default function Navbar({ type }) {
             <div className="navContainer">
                 <span className="logo">Welcome to BOOKING.COM</span>
                 <div className="navItems">
-                    {type !== "logOut" ? <>
+                    { type !== "logOut" ? <>
                         <button className="navButton" onClick={handelRegis}>Register</button>
                         <button className="navButton" onClick={handelLogIn}>Login</button>
                     </>
@@ -34,7 +39,7 @@ export default function Navbar({ type }) {
                         <>
                             <button className="navButton" onClick={handelRegis}>Register</button>
                             <button className="navButton" onClick={handelLogout}>Logout</button>
-                            <button className="navButton" >Checkout</button>
+                            <button className="navButton" onClick={handelCheckOut}>Checkout</button>
                         </>
                     }
                 </div>

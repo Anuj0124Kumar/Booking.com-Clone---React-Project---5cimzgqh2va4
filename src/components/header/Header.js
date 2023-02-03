@@ -69,7 +69,7 @@ export default function Header({ type }) {
                     </div>
                     <div className="headerListItem active">
                         <FontAwesomeIcon icon={faPlane} />
-                        <span style={{"color":"cyan"}}>Flights</span>
+                       <Link to="/flight"> <span style={{"color":"cyan"}}>Flights</span></Link>
                     </div>
                 </div>
                 {type !== "list" && (
@@ -187,7 +187,7 @@ export default function Header({ type }) {
                                 )}
                             </div>
                             <div className="headerSearchItem">
-                                <button className="head" onClick={handleSearch}>
+                                <button className="hea" onClick={handleSearch}>
                                     Search
                                 </button>
                             </div>

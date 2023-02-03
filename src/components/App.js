@@ -6,6 +6,8 @@ import List from './list/List';
 import Hotel from './hotel/Hotel';
 import Register from './register/Register';
 import LogIn from './login/LogIn';
+import CheckOut from './checkout/CheckOut';
+import Flight from './flight/flight';
 
 
 
@@ -20,6 +22,8 @@ const App = () => {
            <Route path="/" element={<Home/>}></Route>
            <Route path="/hotels" element={<List />}></Route>
            <Route path="/hotel_id" element={<Hotel/>}></Route>
+           <Route path="/checkout" element={<CheckOut/>}></Route>
+           <Route path="/flight" element={<Flight/>}></Route>
       </Routes>
     </BrowserRouter>
   )
