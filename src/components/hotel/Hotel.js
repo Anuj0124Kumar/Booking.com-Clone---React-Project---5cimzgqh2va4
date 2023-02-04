@@ -12,11 +12,21 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Hotel() {
 
     const [slideNumber, setSlideNumber] = useState(0);
     const [open, setOpen] = useState(false);
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+         if(!localStorage.getItem("userDetails")){
+            navigate("/register");
+         }
+      });
   
     const photos = [
       {

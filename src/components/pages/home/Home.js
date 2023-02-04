@@ -7,8 +7,19 @@ import MailList from '../../mailList/MailList'
 import Navbar from '../../navbar/Navbar'
 import PropertyList from '../../propertyList/PropertyList'
 import './home.css';
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Home() {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+         if(!localStorage.getItem("userDetails")){
+            navigate("/register");
+         }
+      });
+
     return (
         <>
             <Navbar type="logOut" />

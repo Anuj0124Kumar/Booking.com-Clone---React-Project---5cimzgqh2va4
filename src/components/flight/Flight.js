@@ -12,12 +12,23 @@ import {
 import MailList from '../mailList/MailList';
 import Footer from '../footer/Footer';
 import { useState } from "react";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Flight() {
 
     const [timeFlight,setTimeFlight] = useState("none");
     const [initialFlight,setinitialFlight] = useState("block");
     const [time , setTime] = useState(10);
+
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+         if(!localStorage.getItem("userDetails")){
+            navigate("/register");
+         }
+      });
 
     const handelFlight = () => {
 

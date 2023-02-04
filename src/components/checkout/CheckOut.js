@@ -1,7 +1,19 @@
 import React from 'react'
 import './checkout.css';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function CheckOut() {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+         if(!localStorage.getItem("userDetails")){
+            navigate("/register");
+         }
+      });
+
+      
     return (
         <form >
             <div className="main">
