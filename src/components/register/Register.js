@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 export default function Register({ type }) {
 
     const navigate = useNavigate();
-    
+
 
     const [inpVal, setInpVal] = useState(
         {
@@ -18,10 +18,10 @@ export default function Register({ type }) {
         }
     );
 
-    const [confirmName , setConfirmName] = useState({
+    const [confirmName, setConfirmName] = useState({
 
-        email:"",
-        password:""
+        email: "",
+        password: ""
     });
 
 
@@ -33,43 +33,43 @@ export default function Register({ type }) {
     const [data, setData] = useState([]);
 
     // logIn validation
-    const handelLog = (event) =>{
-        
+    const handelLog = (event) => {
+
         event.preventDefault();
         const { email, password } = confirmName;
 
         const getUserDetails = localStorage.getItem("userDetails");
         console.log(getUserDetails);
-        
-         if (email === "") {
+
+        if (email === "") {
             alert("email field is required");
         }
 
         else if (!email.includes("@")) {
             alert("pls enter valid email Id")
         }
-       
+
         else if (password.length < 7) {
-           
+
             alert("password length must be atleast 8 digit");
         }
         else {
-           
-            if(getUserDetails && getUserDetails.length){
+
+            if (getUserDetails && getUserDetails.length) {
                 const userData = JSON.parse(getUserDetails);
 
 
-                const userLog = userData.filter((el)=>{
+                const userLog = userData.filter((el) => {
                     return el.email === email && el.password === password
                 });
 
                 console.log(userLog);
-                if(userLog.length === 0){
+                if (userLog.length === 0) {
                     alert("Invalid Details");
                 }
-                else{
+                else {
                     console.log("user login successfully");
-                    navigate("/")
+                    navigate("/Home")
                 }
             }
         }
@@ -96,15 +96,15 @@ export default function Register({ type }) {
         else if (!email.includes("@")) {
             alert("pls enter valid email Id")
         }
-       
+
         else if (password.length < 7) {
-           
+
             alert("password length must be atleast 8 digit");
         }
         else {
             alert("signIn successfully");
             localStorage.setItem("userDetails", JSON.stringify([...data, inpVal]));
-            navigate("/Login");
+            navigate("/");
         }
     }
 
@@ -115,7 +115,7 @@ export default function Register({ type }) {
 
         const { value, name } = e.target;
 
-         if( type === "list"){
+        if (type === "list") {
 
             setInpVal(() => {
 
@@ -124,17 +124,17 @@ export default function Register({ type }) {
                     [name]: value
                 }
             })
-         }
+        }
 
-         if(type !== "list"){
-            setConfirmName(()=>{
-                return{
-                   ...confirmName,
-                   [name] : value
+        if (type !== "list") {
+            setConfirmName(() => {
+                return {
+                    ...confirmName,
+                    [name]: value
                 }
-            }) 
-         }
-        
+            })
+        }
+
     }
 
 

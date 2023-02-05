@@ -9,7 +9,7 @@ export default function Navbar({ type }) {
     const lgIn = useNavigate();
     const checkOt = useNavigate();
 
-    const handelCheckOut = () =>{
+    const handelCheckOut = () => {
         checkOt("/checkout");
     }
 
@@ -32,13 +32,13 @@ export default function Navbar({ type }) {
             <div className="navContainer">
                 <span className="logo">Welcome to BOOKING.COM</span>
                 <div className="navItems">
-                    { type !== "logOut" ? <>
+                    {type !== "logOut" ? <>
                         <button className="navButton" onClick={handelRegis}>Register</button>
                         <button className="navButton" onClick={handelLogIn}>Login</button>
                     </>
                         :
                         <>
-                            <button className="navButton" onClick={handelRegis}>Register</button>
+
                             <button className="navButton" onClick={handelLogout}>Logout</button>
                             <button className="navButton" onClick={handelCheckOut}>Checkout</button>
                         </>

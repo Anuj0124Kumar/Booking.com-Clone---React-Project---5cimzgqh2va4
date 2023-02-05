@@ -17,18 +17,18 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Flight() {
 
-    const [timeFlight,setTimeFlight] = useState("none");
-    const [initialFlight,setinitialFlight] = useState("block");
-    const [time , setTime] = useState(10);
+    const [timeFlight, setTimeFlight] = useState("none");
+    const [initialFlight, setinitialFlight] = useState("block");
+    const [time, setTime] = useState(10);
 
 
     const navigate = useNavigate();
 
     useEffect(() => {
-         if(!localStorage.getItem("userDetails")){
+        if (!localStorage.getItem("userDetails")) {
             navigate("/register");
-         }
-      });
+        }
+    });
 
     const handelFlight = () => {
 
@@ -37,7 +37,7 @@ export default function Flight() {
 
     }
 
-    const handelTime = (event) =>{
+    const handelTime = (event) => {
         setTime(event.target.value);
     }
 
@@ -114,7 +114,7 @@ export default function Flight() {
                     <span className="mx-3 mt-3">Direct flight only</span>
                 </div>
             </div>
-            <div className="mainTwo" style={{"display":`${initialFlight}`}}>
+            <div className="mainTwo" style={{ "display": `${initialFlight}` }}>
                 <div className="midFlight">
                     <div className="midFlightContainer">
                         <h3>Popular flights near you</h3>
@@ -177,7 +177,7 @@ export default function Flight() {
                     </div>
                 </div>
             </div>
-            <div className="mainThree" style={{"display":`${timeFlight}`}}>
+            <div className="mainThree" style={{ "display": `${timeFlight}` }}>
                 <div className="timeWrapper">
                     <div className="filterWrapper mt-4">
                         <h4>Filters</h4>
@@ -218,15 +218,15 @@ export default function Flight() {
                         <div className="flightSchdule mt-4">
                             <h6 className="overLine">Arrival to jaipur International Airport</h6>
                             <input type="checkbox" className="checkBox" />
-                              <span className="time mx-4 mt-5">ALL</span> <br /> 
-                              <input type="checkbox" className="checkBox" />
-                              <span className="time mx-4 mt-5">12:00 AM - 05:59 AM</span> <br />
-                              <input type="checkbox" className="checkBox" />
-                              <span className="time mx-4 mt-5">06:00 AM - 11:59 AM</span> <br /> 
-                              <input type="checkbox" className="checkBox" />
-                              <span className="time mx-4 mt-5">12:00 PM - 05:59 PM</span> <br /> 
-                              <input type="checkbox" className="checkBox" />
-                              <span className="time mx-4 mt-5">06:00 PM - 11:59 PM</span> <br />
+                            <span className="time mx-4 mt-5">ALL</span> <br />
+                            <input type="checkbox" className="checkBox" />
+                            <span className="time mx-4 mt-5">12:00 AM - 05:59 AM</span> <br />
+                            <input type="checkbox" className="checkBox" />
+                            <span className="time mx-4 mt-5">06:00 AM - 11:59 AM</span> <br />
+                            <input type="checkbox" className="checkBox" />
+                            <span className="time mx-4 mt-5">12:00 PM - 05:59 PM</span> <br />
+                            <input type="checkbox" className="checkBox" />
+                            <span className="time mx-4 mt-5">06:00 PM - 11:59 PM</span> <br />
                         </div>
                         <div className="flightSchdule mt-4">
                             <h6 className="overLine">Airlines</h6>
@@ -242,8 +242,11 @@ export default function Flight() {
                     </div>
                 </div>
             </div>
-          <MailList/>
-          <Footer/>
+            <MailList />
+            <div className="footerFlight">
+                <Footer />
+            </div>
+
         </div>
     )
 }

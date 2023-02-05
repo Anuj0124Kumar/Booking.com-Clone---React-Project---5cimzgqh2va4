@@ -1,21 +1,19 @@
 import React from 'react'
 import './checkout.css';
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { searchDate } from '../list/List';
 
 export default function CheckOut() {
 
-    const navigate = useNavigate();
+    const RoomNo = Math.floor(Math.random() * (401 - 101)) + 101;
+    const GSTCharge = Math.floor((searchDate * 1200) * 0.18);
 
-    useEffect(() => {
-         if(!localStorage.getItem("userDetails")){
-            navigate("/register");
-         }
-      });
+    let totalRoomCharge = searchDate * 1200 + GSTCharge;
 
-      
+    let SubCharge = searchDate == 0 ? 0 : totalRoomCharge;
+
     return (
         <form >
+
             <div className="main">
                 <div className="midContainer">
                     <span className="head">CheckOut</span>
@@ -24,7 +22,7 @@ export default function CheckOut() {
                         <ul class="list-group">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Room No:
-                                <span class="badge bg-primary rounded-pill">114</span>
+                                <span class="badge bg-primary rounded-pill">{RoomNo}</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Room charge per day:
@@ -32,19 +30,19 @@ export default function CheckOut() {
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 No of days:
-                                <span class="badge bg-primary ">0</span>
+                                <span class="badge bg-primary ">{searchDate}</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Total room charge:
-                                <span class="badge bg-primary">0</span>
+                                <span class="badge bg-primary">{searchDate * 1200}</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                GST charge:
-                                <span class="badge bg-primary">299</span>
+                                18% GST charge:
+                                <span class="badge bg-primary">{GSTCharge}</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text">
                                 Total payment:
-                                <span class="badge bg-primary bill">0</span>
+                                <span class="badge bg-primary bill">{SubCharge}</span>
                             </li>
                         </ul>
                     </div>

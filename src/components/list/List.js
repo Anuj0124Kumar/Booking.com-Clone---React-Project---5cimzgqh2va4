@@ -15,9 +15,11 @@ import DataMap from '../HotelList/DataMap';
 
 
 
+let searchDate = 0;
+let searchMonth = 0;
+let searchYear = 0;
 
-
-export default function List() {
+function List() {
 
     const location = useLocation();
     const [destination, setDestination] = useState(location.state.destination);
@@ -25,7 +27,7 @@ export default function List() {
     const [openDate, setOpenDate] = useState(false);
     const [options, setOptions] = useState(location.state.options);
     const [value, setValue] = useState()
-    const [place , setPlace] = useState(destination);
+    const [place, setPlace] = useState(destination);
 
     const navigate = useNavigate();
 
@@ -34,19 +36,23 @@ export default function List() {
             navigate("/registe");
         }
     });
-   
+
     const handelHotel = () => {
 
         setPlace(value);
 
     }
-     
-     let searchDate = date[0].startDate.getDate();
 
-       //console.log(searchDate);
+    searchDate = date[0].endDate.getDate() - date[0].startDate.getDate() + 1;
+
+
+    console.log(searchDate);
+
+
+
 
     const hndelDestination = (e) => {
-       
+
         setValue(e.target.value);
     }
 
@@ -62,6 +68,7 @@ export default function List() {
                             <div className="lsItem">
                                 <label>Destination</label>
                                 <select className="form-select" aria-label="Default select example" onChange={hndelDestination}>
+                                    <option selected>Choose city</option>
                                     <option value="Mumbai">Mumbai</option>
                                     <option value="Bhopal">Bhopal</option>
                                     <option value="Ranchi">Ranchi</option>
@@ -144,7 +151,9 @@ export default function List() {
             <MailList />
             <div className="foot"><Footer /></div>
 
-        </> 
+        </>
     )
 }
 
+export default List;
+export { searchDate };

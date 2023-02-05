@@ -6,7 +6,7 @@ import {
     faCalendarDays,
     faPerson,
     faPlane,
-    
+
 } from "@fortawesome/free-solid-svg-icons";
 import { DateRange } from "react-date-range";
 
@@ -27,6 +27,9 @@ export default function Header({ type }) {
             key: "selection",
         },
     ]);
+
+
+
     const [openOptions, setOpenOptions] = useState(false);
     const [options, setOptions] = useState({
         adult: 1,
@@ -50,7 +53,7 @@ export default function Header({ type }) {
         navigate("/hotels", { state: { destination, date, options } });
     };
 
-    const handeRegisSign = () =>{
+    const handeRegisSign = () => {
         register("/register");
     }
 
@@ -63,13 +66,13 @@ export default function Header({ type }) {
             >
                 <div className="headerList">
                     <div className="headerListItem active">
-                       <FontAwesomeIcon icon={faBed} />
-                       <Link to="/">
-                        <span style={{"color":"cyan"}}>Stays</span></Link>
+                        <FontAwesomeIcon icon={faBed} />
+                        <Link to="/Home">
+                            <span style={{ "color": "cyan" }}>Stays</span></Link>
                     </div>
                     <div className="headerListItem active">
                         <FontAwesomeIcon icon={faPlane} />
-                       <Link to="/flight"> <span style={{"color":"cyan"}}>Flights</span></Link>
+                        <Link to="/flight"> <span style={{ "color": "cyan" }}>Flights</span></Link>
                     </div>
                 </div>
                 {type !== "list" && (
