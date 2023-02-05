@@ -51,25 +51,25 @@ export default function Flight() {
                     <h6 className="headindText ">Discover your next dream destination</h6>
                 </div>
                 <div className="btnContainer">
-                    <div class="form-check mx-3">
+                    <div className="form-check mx-3">
                         <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
                         <label className="form-check-label" htmlFor="flexRadioDefault1">
                             Round-trip
                         </label>
                     </div>
-                    <div class="form-check mx-3">
+                    <div className="form-check mx-3">
                         <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
                         <label className="form-check-label" htmlFor="flexRadioDefault1">
                             One-way
                         </label>
                     </div>
-                    <div class="form-check mx-3">
+                    <div className="form-check mx-3">
                         <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
                         <label className="form-check-label" htmlFor="flexRadioDefault1">
                             Multi-city
                         </label>
-                    </div> <div class="form-check mx-3">
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    </div> <div className="form-check mx-3">
+                        <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                             <option value="1">Economy</option>
                             <option value="1">Premium</option>
                             <option value="2">Business</option>
