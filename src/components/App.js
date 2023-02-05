@@ -7,7 +7,7 @@ import Hotel from './hotel/Hotel';
 import Register from './register/Register';
 import LogIn from './login/LogIn';
 import CheckOut from './checkout/CheckOut';
-import Flight from './flight/flight';
+import Flight from './flight/Flight';
 
 
 

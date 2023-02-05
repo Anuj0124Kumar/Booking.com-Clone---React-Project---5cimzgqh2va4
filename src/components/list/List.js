@@ -68,7 +68,7 @@ function List() {
                             <div className="lsItem">
                                 <label>Destination</label>
                                 <select className="form-select" aria-label="Default select example" onChange={hndelDestination}>
-                                    <option selected>Choose city</option>
+                                    <option value="Choose city">Choose city</option>
                                     <option value="Mumbai">Mumbai</option>
                                     <option value="Bhopal">Bhopal</option>
                                     <option value="Ranchi">Ranchi</option>
